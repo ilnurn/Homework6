@@ -11,10 +11,10 @@ public class Main {
         int maximumDaySpending = 100_000;
         int minimumDaySpending = 200_000;
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < daySpending.length; i++) {
             daySpending[i] = (int) ((100 * Math.random() + 100) * 1000);
             System.out.print(daySpending[i] + " ");
-            monthSpending = monthSpending + daySpending[i];
+            monthSpending += daySpending[i];
             if (daySpending[i] >= maximumDaySpending) {
                 maximumDaySpending = daySpending[i];
             }
@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Минимальная сумма трат за день составила " + minimumDaySpending + " рублей");
         System.out.println("Максимальная сумма трат за день составила " + maximumDaySpending + " рублей");
         // Задание 3
-        float averageMonthSpending = (float) monthSpending / 30;
+        float averageMonthSpending = (float) monthSpending / daySpending.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageMonthSpending + " рублей");
 
         // Задание 4
