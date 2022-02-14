@@ -40,21 +40,25 @@ public class Main {
         System.out.println();
 
         // Задание 5
-        int a = 1;
-        int[][] matrix = {{a, 0, a}, {0, a, 0}, {a, 0, a}};
+        int j = 7;
+        int[][] matrix = new int[j][j];
+        for (int i = 0; i < j; i++) {
+            for (int i1 = 0; i1 < j; i1++) {
+                if (i == i1 || i == j - 1 - i1) {
+                    matrix[i][i1] = 1;
+                }
+            }
+        }
         for (int[] row : matrix) {
             for (int column : row) {
-                if (column == 0) {
-                    System.out.print("  ");
-                } else {
-                    System.out.print(column + " ");
-                }
+                System.out.print(column + "  ");
             }
             System.out.println();
         }
 
         // Задание 6
         int[] arr = {5, 4, 3, 2, 1};
+        System.out.println("Задание 6");
         System.out.println(Arrays.toString(arr));
 
         int[] arr2 = new int[arr.length];
@@ -67,6 +71,7 @@ public class Main {
         System.out.println(Arrays.toString(arr));
 
         // Задание 7
+        System.out.println("Задание 7");
         arr = new int[]{5, 4, 3, 2, 1};
 
         System.out.println(Arrays.toString(arr));
@@ -74,6 +79,17 @@ public class Main {
             arr[index] = arr[index] + arr[arr.length - 1 - index];
             arr[arr.length - 1 - index] = arr[index] - arr[(arr.length - 1) - index];
             arr[index] = arr[index] - arr[arr.length - 1 - index];
+        }
+        System.out.println(Arrays.toString(arr));
+
+        // Задание 7 (решение с помощью локальной переменной)
+        System.out.println("Задание 7 (решение с помощью локальной переменной)");
+        arr = new int[]{5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length / 2; i++) {
+            int a = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = arr[i];
+            arr[i] = a;
         }
         System.out.println(Arrays.toString(arr));
 
@@ -96,6 +112,7 @@ public class Main {
         }
 
         // Задание 9
+        System.out.println("Задание 9");
         int[] numbers = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
         for (int i = 0; i < numbers.length; i++) {
             for (int i1 = i + 1; i1 < numbers.length; i1++) {
